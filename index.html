@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21 Câu Sắp Xếp Thứ Tự - VMware ESXi 6.7 & vSphere</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #e3f2fd, #bbdefb);
+            margin: 20px;
+            line-height: 1.7;
+        }
+        h1 {
+            text-align: center;
+            color: #1565c0;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #d32f2f;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        .question {
+            background: white;
+            padding: 22px;
+            margin-bottom: 28px;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            border-left: 6px solid #1976d2;
+        }
+        .question h2 {
+            color: #1976d2;
+            margin: 0 0 15px 0;
+            font-size: 19px;
+        }
+        .steps {
+            background: #f5f7fa;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border: 1px dashed #90caf9;
+        }
+        .steps ol {
+            margin: 0;
+            padding-left: 25px;
+        }
+        .steps li {
+            padding: 6px 0;
+            font-size: 16.5px;
+        }
+        .hint {
+            font-weight: bold;
+            color: #d50000;
+            font-style: italic;
+            margin: 12px 0;
+            font-size: 17px;
+        }
+        .answer-box {
+            margin: 18px 0;
+        }
+        input[type="text"] {
+            padding: 12px 15px;
+            width: 140px;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            border: 3px solid #2196f3;
+            border-radius: 10px;
+            text-transform: lowercase;
+        }
+        input[type="text"]:focus {
+            border-color: #ff5722;
+            outline: none;
+            box-shadow: 0 0 10px rgba(255,87,34,0.4);
+        }
+        button {
+            padding: 12px 25px;
+            background: #ff5722;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 17px;
+            font-weight: bold;
+            margin-left: 12px;
+        }
+        button:hover {
+            background: #e64a19;
+            transform: scale(1.05);
+        }
+        .result {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 19px;
+            text-align: center;
+        }
+        .correct {
+            background: #e8f5e8;
+            color: #1b5e20;
+            border: 2px solid #4caf50;
+        }
+        .incorrect {
+            background: #ffebee;
+            color: #b71c1c;
+            border: 2px solid #f44336;
+        }
+        .answer-key {
+            color: #d50000;
+            font-size: 24px;
+            letter-spacing: 2px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #555;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>21 CÂU SẮP XẾP THỨ TỰ CHUẨN VMWARE</h1>
+    <p class="subtitle">ESXi 6.7 • vSphere • vCenter • vSAN • NTP • Firewall • vMotion</p>
+    <p style="text-align:center;font-weight:bold;color:#d32f2f;">
+        Nhập đáp án dạng chuỗi ký tự (ví dụ: acbd) → Nhấn Enter hoặc Submit
+    </p>
+
+    <!-- 21 Câu hỏi -->
+    <div class="question">
+        <h2>1. Bài 7 Câu 9: Cấu hình mạng cơ bản cho host ESXi 6.7</h2>
+        <div class="steps" id="steps-1"></div>
+        <p class="hint">Bạn hãy sắp xếp lộn xộn từ a-d</p>
+        <div class="answer-box">
+            <input type="text" id="input-1" none="acbd" maxlength="4">
+            <button onclick="check(1, 'acbd')">Submit</button>
+        </div>
+        <div class="result" id="result-1"></div>
+    </div>
+
+    <div class="question">
+        <h2>2. Bài 7 Câu 10: Tạo máy ảo trong ESXi 6.7 qua vSphere Client</h2>
+        <div class="steps" id="steps-2"></div>
+        <p class="hint">Bạn hãy sắp xếp lộn xộn từ a-d</p>
+        <div class="answer-box">
+            <input type="text" id="input-2" none="cdab" maxlength="4">
+            <button onclick="check(2, 'cdab')">Submit</button>
+        </div>
+        <div class="result" id="result-2"></div>
+    </div>
+
+    <div class="question">
+        <h2>3. Bài 7 Câu 11: Kiểm tra hiệu suất host ESXi 6.7</h2>
+        <div class="steps" id="steps-3"></div>
+        <p class="hint">Bạn hãy sắp xếp lộn xộn từ a-d</p>
+        <div class="answer-box">
+            <input type="text" id="input-3" none="abcd" maxlength="4">
+            <button onclick="check(3, 'abcd')">Submit</button>
+        </div>
+        <div class="result" id="result-3"></div>
+    </div>
+
+    <div class="question">
+        <h2>4. Bài 7 Câu 12: Triển khai vSAN trong ESXi 6.7</h2>
+        <div class="steps" id="steps-4"></div>
+        <p class="hint">Bạn hãy sắp xếp lộn xộn từ a-d</p>
+        <div class="answer-box">
+            <input type="text" id="input-4" none="bdca" maxlength="4">
+            <button onclick="check(4, 'bdca')">Submit</button>
+        </div>
+        <div class="result" id="result-4"></div>
+    </div>
+
+    <div class="question">
+        <h2>5. Bài 7 Câu 20: Cài đặt ESXi 6.7</h2>
+        <div class="steps" id="steps-5"></div>
+        <p class="hint">Bạn hãy sắp xếp lộn xộn từ a-d</p>
+        <div class="answer-box">
+            <input type="text" id="input-5" none="bcad" maxlength="4">
+            <button onclick="check(5, 'bcad')">Submit</button>
+        </div>
+        <div class="result" id="result-5"></div>
+    </div>
+
+    <div class="question">
+        <h2>6. Bài 7 Câu 24: Thực hiện vMotion trong ESXi 6.7</h2>
+        <div class="steps" id="steps-6"></div>
+        <p class="hint">Bạn hãy sắp xếp lộn xộn từ a-d</p>
+        <div class="answer-box">
+            <input type="text" id="input-6" none="bcad" maxlength="4">
+            <button onclick="check(6, 'bcad')">Submit</button>
+        </div>
+        <div class="result" id="result-6"></div>
+    </div>
+
+    <div class="question">
+        <h2>7. Bài 7 Câu 25: Khắc phục máy ảo chạy chậm</h2>
+        <div class="steps" id="steps-7"></div>
+        <p class="hint">Bạn hãy sắp xếp lộn xộn từ a-d</p>
+        <div class="answer-box">
+            <input type="text" id="input-7" none="bacd" maxlength="4">
+            <button onclick="check(7, 'bacd')">Submit</button>
+        </div>
+        <div class="result" id="result-7"></div>
+    </div>
+
+    <div class="question">
+        <h2>8. Bài 7 Câu 27: Tạo datastore VMFS 6</h2>
+        <div class="steps" id="steps-8"></div>
+        <p class="hint">Bạn hãy sắp xếp lộn xộn từ a-d</p>
+        <div class="answer-box">
+            <input type="text" id="input-8" none="badc" maxlength="4">
+            <button onclick="check(8, 'badc')">Submit</button>
+        </div>
+        <div class="result" id="result-8"></div>
+    </div>
+
+    <div class="question">
+        <h2>9. Bài 8 Câu 8: Truy cập vSphere Client</h2>
+        <div class="steps" id="steps-9"></div>
+        <p class="hint">Bạn hãy sắp xếp lộn xộn từ a-d</p>
+        <div class="answer-box">
+            <input type="text" id="input-9" none="abcd" maxlength="4">
+            <button onclick="check(9, 'abcd')">Submit</button>
+        </div>
+        <div class="result" id="result-9"></div>
+    </div>
+
+    <div class="question">
+        <h2>10. Bài 8 Câu 9: Cấu hình NTP trong ESXi 6.7</h2>
+        <div class="steps" id="steps-10"></div>
+        <p class="hint">Bạn hãy sắp xếp lộn xộn từ a-d</p>
+        <div class="answer-box">
+            <input type="text" id="input-10" none="bcad" maxlength="4">
+            <button onclick="check(10, 'bcad')">Submit</button>
+        </div>
+        <div class="result" id="result-10"></div>
+    </div>
+
+    <div class="question">
+        <h2>11. Bài 8 Câu 10: Cấu hình DNS trong ESXi 6.7</h2>
+        <div class="steps" id="steps-11"></div>
+        <p class="hint">Bạn hãy sắp xếp lộn xộn từ a-d</p>
+        <div class="answer-box">
+            <input type="text" id="input-11" none="dbac" maxlength="4">
+            <button onclick="check(11, 'dbac')">Submit</button>
+        </div>
+        <div class="result" id="result-11"></div>
+    </div>
+
+    <div class="question">
+        <h2>12. Bài 8 Câu 11: Bật ruleset NTP trong firewall</h2>
+        <div class="steps" id="steps-12"></div>
+        <p class="hint">Bạn hãy sắp xếp lộn xộn từ a-d</p>
+        <div class="answer-box">
+            <input type="text" id="input-12" none="bacd" maxlength="4">
+            <button onclick="check(12, 'bacd')">Submit</button>
+        </div>
+        <div class="result" id="result-12"></div>
+    </div>
+
+    <div class="question">
+        <h2>13. Bài 8 Câu 12: Tạo custom rule firewall</h2>
+        <div class="steps" id="steps-13"></div>
+        <p class="hint">Bạn hãy sắp xếp lộn xộn từ a-d</p>
+        <div class="answer-box">
+            <input type="text" id="input-13" none="adcb" maxlength="4">
+            <button onclick="check(13, 'adcb')">Submit</button>
+        </div>
+        <div class="result" id="result-13"></div>
+    </div>
+
+    <div class="question">
+        <h2>14. Bài 8 Câu 23: Tạo máy ảo trên ESXi 6.7</h2>
+        <div class="steps" id="steps-14"></div>
+        <p class="hint">Bạn hãy sắp xếp lộn xộn từ a-d</p>
+        <div class="answer-box">
+            <input type="text" id="input-14" none="acbd" maxlength="4">
+            <button onclick="check(14, 'acbd')">Submit</button>
+        </div>
+        <div class="result" id="result-14"></div>
+    </div>
+
+    <div class="question">
+        <h2>15. Bài 8 Câu 24: Upload file ISO lên ESXi</h2>
+        <div class="steps" id="steps-15"></div>
+        <p class="hint">Bạn hãy sắp xếp lộn xộn từ a-d</p>
+        <div class="answer-box">
+            <input type="text" id="input-15" none="dacb" maxlength="4">
+            <button onclick="check(15, 'dacb')">Submit</button>
+        </div>
+        <div class="result" id="result-15"></div>
+    </div>
+
+    <div class="question">
+        <h2>16. Bài 8 Câu 30: Kiểm tra NTP trong ESXi</h2>
+        <div class="steps" id="steps-16"></div>
+        <p class="hint">Bạn hãy sắp xếp lộn xộn từ a-c</p>
+        <div class="answer-box">
+            <input type="text" id="input-16" none="acb" maxlength="3">
+            <button onclick="check(16, 'acb')">Submit</button>
+        </div>
+        <div class="result" id="result-16"></div>
+    </div>
+
+    <div class="question">
+        <h2>17. Bài 9 Câu 7: Quy trình xác thực SSO</h2>
+        <div class="steps" id="steps-17"></div>
+        <p class="hint">Bạn hãy sắp xếp lộn xộn từ a-d</p>
+        <div class="answer-box">
+            <input type="text" id="input-17" none="cbad" maxlength="4">
+            <button onclick="check(17, 'cbad')">Submit</button>
+        </div>
+        <div class="result" id="result-17"></div>
+    </div>
+
+    <div class="question">
+        <h2>18. Bài 9 Câu 8: Cài đặt PSC (Giai đoạn 1)</h2>
+        <div class="steps" id="steps-18"></div>
+        <p class="hint">Bạn hãy sắp xếp lộn xộn từ a-d</p>
+        <div class="answer-box">
+            <input type="text" id="input-18" none="bdca" maxlength="4">
+            <button onclick="check(18, 'bdca')">Submit</button>
+        </div>
+        <div class="result" id="result-18"></div>
+    </div>
+
+    <div class="question">
+        <h2>19. Bài 9 Câu 9: Thành phần mạng ảo từ trên xuống dưới</h2>
+        <div class="steps" id="steps-19"></div>
+        <p class="hint">Bạn hãy sắp xếp lộn xộn từ a-c</p>
+        <div class="answer-box">
+            <input type="text" id="input-19" none="bac" maxlength="3">
+            <button onclick="check(19, 'bac')">Submit</button>
+        </div>
+        <div class="result" id="result-19"></div>
+    </div>
+
+    <div class="question">
+        <h2>20. Bài 9 Câu 10: Bảo vệ PSC theo mức độ ưu tiên</h2>
+        <div class="steps" id="steps-20"></div>
+        <p class="hint">Bạn hãy sắp xếp lộn xộn từ a-c</p>
+        <div class="answer-box">
+            <input type="text" id="input-20" none="acb" maxlength="3">
+            <button onclick="check(20, 'acb')">Submit</button>
+        </div>
+        <div class="result" id="result-20"></div>
+    </div>
+
+    <div class="question">
+        <h2>21. Bài 9 Câu 11: Cấu hình Giai đoạn 2 của vCSA</h2>
+        <div class="steps" id="steps-21"></div>
+        <p class="hint">Bạn hãy sắp xếp lộn xộn từ a-d</p>
+        <div class="answer-box">
+            <input type="text" id="input-21" none="acbd" maxlength="4">
+            <button onclick="check(21, 'acbd')">Submit</button>
+        </div>
+        <div class="result" id="result-21"></div>
+    </div>
+
+    <div class="footer">
+        <p>Đã hoàn thiện 21/21 câu hỏi VMware ESXi 6.7 • Chúc bạn thi đỗ VCP-DCV!</p>
+    </div>
+
+    <script>
+        const questions = [
+            {steps: ["a) Đăng nhập DCUI","c) Gán địa chỉ IP tĩnh","b) Kiểm tra kết nối mạng","d) Khởi động lại dịch vụ mạng"], answer: "acbd"},
+            {steps: ["c) Tạo máy ảo mới","d) Gán datastore","a) Chọn cấu hình phần cứng","b) Cài đặt hệ điều hành khách"], answer: "cdab"},
+            {steps: ["a) Đăng nhập vSphere Client","b) Chọn host cần kiểm tra","c) Xem biểu đồ tài nguyên","d) Phân tích CPU/RAM sử dụng"], answer: "abcd"},
+            {steps: ["b) Thêm ổ đĩa cục bộ vào host","d) Cấu hình mạng vSAN","c) Tạo disk group","a) Kích hoạt vSAN trên cluster"], answer: "bdca"},
+            {steps: ["b) Tạo USB boot bằng Rufus","c) Chấp nhận EULA","a) Chọn ổ cứng cài đặt","d) Cấu hình mật khẩu root"], answer: "bcad"},
+            {steps: ["b) Chọn máy ảo cần di chuyển","c) Chọn host đích","a) Kiểm tra kết nối mạng giữa các host","d) Xác nhận di chuyển"], answer: "bcad"},
+            {steps: ["b) Cài đặt VMware Tools","a) Kiểm tra phân bổ tài nguyên","c) Tăng CPU/RAM nếu cần","d) Khởi động lại máy ảo"], answer: "bacd"},
+            {steps: ["b) Đăng nhập vSphere Client","a) Chọn ổ cứng chưa định dạng","d) Đặt tên datastore","c) Định dạng VMFS 6"], answer: "badc"},
+            {steps: ["a) Nhập https://192.168.1.100/ui vào trình duyệt","b) Bỏ qua cảnh báo chứng chỉ SSL","c) Nhập tài khoản root và mật khẩu","d) Nhấn Login"], answer: "abcd"},
+            {steps: ["b) Đăng nhập vSphere Client","c) Truy cập Host > Configure > System > Time Configuration","a) Chọn Use Network Time Protocol và thêm máy chủ NTP","d) Khởi động dịch vụ NTP"], answer: "bcad"},
+            {steps: ["d) Đăng nhập vSphere Client","b) Truy cập Host > Configure > Networking > TCP/IP Configuration","a) Thêm địa chỉ DNS và hostname","c) Kiểm tra phân giải DNS bằng nslookup pool.ntp.org"], answer: "dbac"},
+            {steps: ["b) Đăng nhập vSphere Client","a) Truy cập Host > Configure > System > Security Profile > Firewall","c) Bật ruleset ntpClient và giới hạn IP","d) Kiểm tra bằng esxcli network firewall ruleset list | grep ntpClient"], answer: "bacd"},
+            {steps: ["a) Tạo file custom-ntp.xml qua SSH","d) Viết cấu hình XML cho rule NTP","c) Refresh firewall bằng esxcli network firewall refresh","b) Kiểm tra ruleset bằng esxcli network firewall ruleset list | grep customNTP"], answer: "adcb"},
+            {steps: ["a) Kích chuột phải vào Virtual machines, chọn Create/Register VM","c) Chọn không gian lưu trữ","b) Chọn Datastore ISO file cho CD/DVD Drive","d) Nhấn Finish để hoàn tất"], answer: "acbd"},
+            {steps: ["d) Đăng nhập vSphere Client","a) Truy cập Storage > datastore1 > Datastore browser","c) Tạo thư mục mới tên \"iso\"","b) Chọn thư mục và nhấn Upload"], answer: "dacb"},
+            {steps: ["a) Mở ESXi Shell","c) Chạy lệnh esxcli system ntp get","b) Chạy lệnh date"], answer: "acb"},
+            {steps: ["c) Truy cập vSphere Web Client","b) Kiểm tra thông tin xác thực qua Active Directory hoặc SAML 2.0","a) Phát hành mã thông báo bảo mật","d) Sử dụng mã thông báo để truy cập vCenter Server"], answer: "cbad"},
+            {steps: ["b) Chọn loại triển khai là PSC độc lập","d) Cung cấp tên VM và mật khẩu gốc","c) Chọn kho dữ liệu lưu trữ","a) Cung cấp thông tin mạng (IP, DNS)"], answer: "bdca"},
+            {steps: ["b) NIC ảo (vNIC)","a) VMkernel","c) Virtual Switch (vSwitch)"], answer: "bac"},
+            {steps: ["a) Triển khai cụm HA với bộ cân bằng tải","c) Cấu hình Multisite cho nhiều vị trí vật lý","b) Sao lưu toàn diện dữ liệu PSC"], answer: "acb"},
+            {steps: ["a) Cung cấp thông tin NTP","c) Cấu hình SSO với tên miền và mật khẩu","b) Tham gia chương trình cải thiện trải nghiệm khách hàng","d) Xem lại cấu hình và hoàn tất"], answer: "acbd"}
+        ];
+
+        // Xáo trộn và hiển thị
+        questions.forEach((q, i) => {
+            const shuffled = [...q.steps].sort(() => Math.random() - 0.5);
+            document.getElementById(`steps-${i+1}`).innerHTML = "<ol>" + shuffled.map(s => `<li>${s}</li>`).join("") + "</ol>";
+        });
+
+        // Kiểm tra đáp án
+        function check(num, correct) {
+            const input = document.getElementById(`input-${num}`).value.trim().toLowerCase();
+            const result = document.getElementById(`result-${num}`);
+            if (input === correct) {
+                result.innerHTML = `<div class="correct">XUẤT SẮC! Đáp án đúng: <b class="answer-key">${correct.toUpperCase()}</b></div>`;
+            } else {
+                result.innerHTML = `<div class="incorrect">SAI RỒI! Đáp án đúng là: <b class="answer-key">${correct.toUpperCase()}</b><br>Bạn nhập: <b>${input || "trống"}</b></div>`;
+            }
+        }
+
+        // Nhấn Enter để submit
+        document.addEventListener("keypress", e => {
+            if (e.key === "Enter" && document.activeElement.tagName === "INPUT") {
+                const id = document.activeElement.id;
+                const num = id.split("-")[1];
+                const button = document.activeElement.nextElementSibling;
+                if (button && button.tagName === "BUTTON") button.click();
+            }
+        });
+    </script>
+</body>
+</html>
